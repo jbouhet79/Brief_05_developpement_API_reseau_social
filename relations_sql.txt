@@ -1,0 +1,62 @@
+[14:09] CADET Flavien
+Relations 
+(Vous pouvez tester sur mocodo les blocks de code pour avoir le visuel)
+ 
+#### Exemple 1 - Relation one-to-one (1:1)
+ 
+```
+
+PERSONNE: ID_personne, Nom, Prénom
+
+PASSPORT: Numéro_passeport, Date_expiration
+ 
+HAVE, 11 PASSPORT, 01 PERSONNE
+
+```
+ 
+Une personne possède au plus un passeport, et un passeport appartient à une seule personne.
+ 
+#### Exemple 2 - Relation one-to-many (1:N)
+ 
+```
+
+EMPLOYE: Matricule, Nom, Salaire
+
+PROJET: Numéro_projet, Description
+ 
+MANAGE, NN EMPLOYE, 01 PROJET
+
+```
+ 
+Un employé gère zéro, une ou plusieurs projets, et un projet est géré par un seul employé.
+ 
+#### Exemple 3 - Relation many-to-many (M:N)
+ 
+```
+
+FILM: ID_film, Titre
+
+ACTEUR: ID_acteur, Nom
+ 
+APPARAIT, NN FILM, 01 ACTEUR
+
+MET_EN_SCENE, NN ACTEUR, 01 FILM
+
+```
+ 
+Un film met en scène zéro, un ou plusieurs acteurs, et un acteur apparait dans zéro, un ou plusieurs films.
+ 
+#### Exemple 4 - Relation many-to-many (M:N) avec des données supplémentaire
+ 
+```
+
+FILM: ID_film, Titre
+
+ACTEUR: ID_acteur, Nom
+ 
+JOUE, 0N FILM, 0N ACTEUR: temps_a_ecran
+
+```
+ 
+On peux ajouter des informations sur l'acteur dans ce films dans la table de liaison. Ici l'acteur apparait x minutes dans le film.
+Mocodo online

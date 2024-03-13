@@ -1,0 +1,6 @@
+%%mocodo
+:
+Post: id, date, contenu
+:
+Commentaire: id, date, contenu, #id post > Post > id, #id parent > Commentaire > id
+:

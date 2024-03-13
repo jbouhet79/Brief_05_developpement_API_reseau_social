@@ -1,0 +1,4 @@
+Post: id, date, contenu
+Possède, 11 [commentaire] Commentaire, 0N [post] Post
+Commentaire: id, date, contenu
+Réponse, 01 [commentaire] Commentaire, 0N [parent] Commentaire

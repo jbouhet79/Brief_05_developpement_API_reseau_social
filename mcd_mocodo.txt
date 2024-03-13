@@ -1,0 +1,18 @@
+/*================================= BRIEF 04 =================*/
+:
+:
+LIER, 1N POST, 0N GROUP
+GROUP : id, name
+PARTAGER, 0N GROUP, 0N ACCOUNT
+
+ATTACHMENT : id, image, document, link, post_id
+AVOIR, 11 ATTACHMENT, 0N POST
+POST : id, content, account_id, goup_id, date, parent_post
+FAIRE, 0N ACCOUNT, 11 POST
+ACCOUNT : id, name, first_name, age, password, email, tel, user_name
+
+:
+:
+COMMENTER, 0N POST, 01 POST
+LIKE, 0N POST, 0N ACCOUNT
+SUIVRE, 0N ACCOUNT, 0N ACCOUNT: notification

@@ -1,0 +1,23 @@
+{
+  "width": 396,
+  "height": 102,
+  "cx": [
+    [ "POST", 39 ],
+    [ "POSSEDE", 133 ],
+    [ "COMMENTAIRE", 243 ],
+    [ "REPONSE", 354 ]
+  ],
+  "cy": [
+    [ "POST", 51 ],
+    [ "POSSEDE", 51 ],
+    [ "COMMENTAIRE", 51 ],
+    [ "REPONSE", 51 ]
+  ],
+  "shift": [
+    [ "POSSEDE,COMMENTAIRE,0", 0 ],
+    [ "POSSEDE,POST,0", 0 ],
+    [ "REPONSE,COMMENTAIRE,-1_0", 0 ],
+    [ "REPONSE,COMMENTAIRE,1_0", 0 ]
+  ],
+  "ratio": []
+}

@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "database": "Brief4",
+            "username": "postgres",
+            "name": "brief4",
+            "password": "postgres"
+        }
+    ]
+}
