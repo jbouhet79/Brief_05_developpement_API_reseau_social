@@ -1,5 +1,6 @@
 ## 1. Réalisation du cahier des charges
 
+
 ![cahier des charges](Capture_cahier_des_charges.PNG)
 
 ## 2. Validation du cahier des charges
@@ -9,7 +10,6 @@ envoi d'un mail à  jean-marc.l@nocturlab.fr pour confirmation de la bonne compr
  via : https://fr.fakenamegenerator.com/order.php
 
 ## 4. Réalisation du MCD via mocodo.net :
-
     :
     :
     LIER, 01 POST, 0N GROUP
@@ -30,8 +30,6 @@ envoi d'un mail à  jean-marc.l@nocturlab.fr pour confirmation de la bonne compr
     :
 
 ![alt text](Capture_mcd_brief4.PNG)
-
-## 5. Réalisation du MLD via drawio
 
 Relation : AVOIR, 11 ATTACHMENT, 0N POST ----> **one**-to-many
 - 1 POST peut avoir 0, 1 ou plusieures ATTACHMENT
@@ -61,7 +59,9 @@ Relation : LIKE, 0N POST, 0N ACCOUNT ---> many-to-many
 - 1 ACCOUNT peut liker 0, 1 ou plusieurs POST
 
 
+## 5. Réalisation du MLD via drawio
 ![alt text](mld.drawio.png)
+
 
 ## 6. Réalisation des fichiers : 
 - bdd.sql : Tables et tables intermédiares
