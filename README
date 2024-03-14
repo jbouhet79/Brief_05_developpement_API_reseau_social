@@ -12,7 +12,7 @@ envoi d'un mail à  jean-marc.l@nocturlab.fr pour confirmation de la bonne compr
 
     :
     :
-    LIER, 1N POST, 0N GROUP
+    LIER, 01 POST, 0N GROUP
     GROUP : id, name, description, visibility
     PARTAGER, 0N GROUP, 0N ACCOUNT
 
@@ -37,9 +37,9 @@ Relation : AVOIR, 11 ATTACHMENT, 0N POST ----> ***one**-to-many
 1 POST peut avoir 0, 1 ou plusieures ATTACHMENT
 1 ATTACHMENT est lié qu'à **1 seul POST**
 
-Relation : LIER, 1N POST, 0N GROUP ---> many-to-many
+Relation : LIER, O1 POST, 0N GROUP ---> many-to-many
 1 GROUP peut est lié à 0, 1, ou plusieurs POST
-1 POST ne peut être lié qu'à **1 seul GROUP**
+1 POST ne peut être lié qu'à **0 ou 1 seul GROUP**
 
 Relation : PARTAGER, 0N GROUP, 0N ACCOUNT ---> many-to-many
 1 GROUP peut être partagé par 0, 1, ou plusieurs ACCOUNT
