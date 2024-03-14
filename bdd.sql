@@ -1,3 +1,5 @@
+CREATE DATABASE Brief4;
+ 
 -- DROP TABLE account cascade;
 
 /*======================= LES TABLES ===================*/
