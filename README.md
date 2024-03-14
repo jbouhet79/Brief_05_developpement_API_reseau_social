@@ -33,32 +33,32 @@ envoi d'un mail à  jean-marc.l@nocturlab.fr pour confirmation de la bonne compr
 
 ## 5. Réalisation du MLD via drawio
 
-Relation : AVOIR, 11 ATTACHMENT, 0N POST ----> ***one**-to-many
-1 POST peut avoir 0, 1 ou plusieures ATTACHMENT
-1 ATTACHMENT est lié qu'à **1 seul POST**
+Relation : AVOIR, 11 ATTACHMENT, 0N POST ----> **one**-to-many
+- 1 POST peut avoir 0, 1 ou plusieures ATTACHMENT
+- 1 ATTACHMENT est lié qu'à **1 seul POST**
 
 Relation : LIER, O1 POST, 0N GROUP ---> many-to-many
-1 GROUP peut est lié à 0, 1, ou plusieurs POST
-1 POST ne peut être lié qu'à **0 ou 1 seul GROUP**
+- 1 GROUP peut est lié à 0, 1, ou plusieurs POST
+- 1 POST ne peut être lié qu'à **0 ou 1 seul GROUP**
 
 Relation : PARTAGER, 0N GROUP, 0N ACCOUNT ---> many-to-many
-1 GROUP peut être partagé par 0, 1, ou plusieurs ACCOUNT
-1 ACCOUNT peut partager dans 0, 1, ou plusieurs GROUP
+- 1 GROUP peut être partagé par 0, 1, ou plusieurs ACCOUNT
+- 1 ACCOUNT peut partager dans 0, 1, ou plusieurs GROUP
 
 Relation : FAIRE, 0N ACCOUNT, 11 POST  ---> many-to-**one**
-1 ACCOUNT peut faire 0, 1 ou plusieurs POST
-1 POST ne peut être fait que par **1 seul ACCOUNT**
+- 1 ACCOUNT peut faire 0, 1 ou plusieurs POST
+- 1 POST ne peut être fait que par **1 seul ACCOUNT**
 
 Relation : SUIVRE, 0N ACCOUNT, 0N ACCOUNT ---> many-to-many
-1 ACCOUNT peut suivre 0, 1, ou plusieurs autres ACCOUNT
+- 1 ACCOUNT peut suivre 0, 1, ou plusieurs autres ACCOUNT
 
 Relation : COMMENTER, 0N POST, 01 POST ---> many-to-**one**
-1 POST peut commenter que par **1 seul POST**
-1 POST peut être commenter par 0, 1, ou N autres POST
+- 1 POST peut commenter que par **1 seul POST**
+- 1 POST peut être commenter par 0, 1, ou N autres POST
 
 Relation : LIKE, 0N POST, 0N ACCOUNT ---> many-to-many
-1 POST peut être liker par 0, 1, ou plusieurs ACCOUNT
-1 ACCOUNT peut liker 0, 1 ou plusieurs POST
+- 1 POST peut être liker par 0, 1, ou plusieurs ACCOUNT
+- 1 ACCOUNT peut liker 0, 1 ou plusieurs POST
 
 
 ![alt text](mld.drawio.png)
