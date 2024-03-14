@@ -53,10 +53,14 @@ INSERT INTO account (name, first_name, age, password, email, tel, user_name) VAL
 
 --SELECT * FROM account;
 
+/* REQUETE 0 */
+---- permettre de s'inscrire avec un compte google, discord ou autre via le token associé----
+ALTER TABLE account ADD 'token' VARCHER(255);
+
 /* SELECT * FROM account ORDER BY name ASC; ==== Trier dans l'ordre croissant des noms====*/
 
 /* -------------------- insérer des posts ------------------- */
-
+/* REQUETE 1 */
 INSERT INTO post (content, account_id, date) VALUES 
 ('aaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', '3', '01/01/1995 07:02:55'),
 ('bbbbb bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb', '5', '01/01/1995 07:02:55'),
@@ -69,7 +73,10 @@ INSERT INTO post (content, account_id, date) VALUES
 ('iiiii iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii', '8', '08/08/2002 14:02:55');
 -- SELECT * FROM post; 
 
+
+
 /* -------------------- insérer de like ----------------------*/
+/* REQUETE 2 */
 
 INSERT INTO "like" (account_id, post_id) VALUES
 (5, 2),
@@ -82,6 +89,7 @@ INSERT INTO "like" (account_id, post_id) VALUES
 
 
 /* ---------------- insertion de commentaire ----------------- */
+/* REQUETE 3 */
 
 INSERT INTO post (content, account_id, date, parent_post) VALUES
 ('AA AAAA', '7', '01/01/2010 08:00:00', 6),
@@ -101,11 +109,15 @@ INSERT INTO attachment (image, post_id) VALUES('C:\Workspaces\Brief_04_Gerer_un_
 --DELETE FROM attachment WHERE id=3;
 
 /* ------------------------------------- GROUPES ---------------------------------- */
+/* REQUETE 10 */
 ------------------ définition de 2 groupes avec une visibilté 'public' ---------------
 INSERT INTO "group" (name, description, visibility) VALUES ('road', 'Sorties du weekend', 'public');
 INSERT INTO "group" (name, description, visibility) VALUES ('gravel', 'Parcours', 'public');
 
+-- SELECT * FROM "group";
+
 ------- affectation de 3 mambres dans le groupe 1 et 4 dans le groupe 2 -----------
+/* REQUETE 12 */
 INSERT INTO share (group_id, account_id, role) VALUES 
 (1, 1, 'Super user'),
 (1, 3, 'Administrator'),
@@ -117,6 +129,8 @@ INSERT INTO share (group_id, account_id, role) VALUES
 
 --SELECT * FROM "group";
 --SELECT * FROM share;
+
+
 
 
 -------------------- afficher les membres du groupe 'road' ---------------------------
@@ -143,7 +157,7 @@ WHERE g.name = 'gravel';
 
 
 /*=============================== LES MISES A JOUR =================================*/
-
+/* REQUETE 14 */
 ----------------------- Mise à jour des rôles dans un groupe -------------------------
 ------------------ passer le user '3' en visiteur dans le groupe 1   -----------------
 UPDATE share SET role = 'Visitor' WHERE account_id = 3 AND  group_id = 1;

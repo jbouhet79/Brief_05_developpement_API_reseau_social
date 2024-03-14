@@ -10,6 +10,7 @@ CREATE TABLE account (
     email VARCHAR(50) NOT NULL,
     tel VARCHAR(50) NOT NULL,
     user_name VARCHAR(20) NOT NULL,
+    notification bool DEFAULT true,
     PRIMARY KEY(id)
 );
 
@@ -24,6 +25,8 @@ CREATE TABLE account (
 -- DROP TABLE follower cascade;
 CREATE TABLE follower (
     id SERIAL PRIMARY KEY,
+    account_id INT NOT NULL,
+    follower_id INT NOT NULL,
     notification bool DEFAULT false
 );
 

@@ -1,17 +1,17 @@
 /* ==================================== LES FILTRES =================================*/
-/* ---------- filtrer les posts par date décroissante (du plus récent...) ---------- */
+/* ---------- trier les posts par date décroissante (du plus récent...) ---------- */
+/* REQUETE 4*/
+SELECT content, date FROM post ORDER BY date DESC LIMIT 5 OFFSET 0;
+--affiche 5 post par page (en sautant 0 post) --> affichage de la page 1
+SELECT content, date FROM post ORDER BY date DESC LIMIT 5 OFFSET 5;
+--affiche 5 post par page (en sautant 5 posts) --> affichage de la page 2
 
-SELECT content, date FROM post ORDER BY date DESC;
-
-/* -------- filtrer les posts et commentaires par auteur (ordre alphabétique) -------- */
-
-SELECT content, a.name 
-FROM post p
-JOIN account a
-ON p.account_id = a.id
-ORDER BY a.name ASC;
+/* ------------------------------ filtrer les posts par date ----------------------- */
+/* REQUETE 4 bis*/
+SELECT content, date FROM post WHERE date > '01/01/2000 00:00:00' AND date < '01/01/2002 00:00:00';
 
 /* --------------- filtrer les posts par popularité (le + populaire) -------------- */
+/* REQUETE 5*/
 SELECT post_id, COUNT (account_id)
 FROM "like"
 GROUP BY post_id
@@ -31,8 +31,20 @@ ON p.id = l.post_id
 GROUP BY p.id
 ORDER BY nombre_de_likes DESC;
 
+/* -------- filtrer les posts et commentaires par auteur (ordre alphabétique) -------- */
+/* REQUETE 6*/
+SELECT content, a.name 
+FROM post p
+JOIN account a
+ON p.account_id = a.id
+ORDER BY a.name ASC;
+
+
+
+
 
 /* ------------- recherche des comptes par nom ou pseudo de l'auteur ------------------- */
+/* REQUETE 7*/
 
 SELECT * FROM account WHERE LOWER(name) LIKE LOWER('%:nom%') OR LOWER(user_name) LIKE LOWER('%:nom%');
 
@@ -41,6 +53,7 @@ SELECT * FROM account WHERE LOWER(name) LIKE LOWER('%ou%') OR LOWER(user_name) L
 
 
 /* -------------- filtrer les posts par mots clés dans la publication ------------- */
+/* REQUETE 8*/
 
 SELECT * FROM post WHERE content LIKE '%:mot_cle%';
 ------------ filtrer les posts contenant un 'b' dans la publication -----------------
@@ -59,10 +72,23 @@ WHERE g.name = :g.name;
 
 /*=============================== LES MISES A JOUR ================================*/
 /* ----------- envoyer une notification à un utilisateur lorqu'il est suivi -------*/
-
+/* REQUETE 9*/
 UPDATE follower SET notification = true WHERE account_id = :account_id AND follower_id = :follower_id;
 
+/* ---------- permettre à un utilisateur de déactiver ses notifications ----------*/
+/* REQUETE 9bis */
+UPDATE account SET notification = false; 
+
+/* REQUETE 11 */
+UPDATE "group" SET visibility = 'Private' WHERE name = :group_name;
+UPDATE "group" SET visibility = 'Public' WHERE name = :group_name;
+
+-- UPDATE "group" SET visibility = 'Private' WHERE name = 'gravel';
+
+
+
 ----------------------- Mise à jour des rôles dans UN GROUPE -----------------------------
+/* REQUETE 13*/
 ---------------- passer un membre en 'Visitor' dans un groupe de partage   ---------------
 UPDATE share SET role = 'Visitor' WHERE account_id = :account_id AND  group_id = :group_id;
 
