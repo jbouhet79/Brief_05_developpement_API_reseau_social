@@ -1,3 +1,10 @@
+/* REQUETE 00*/
+/* ---------- affichage des données de la page profil d'un nom utilisateur ------------*/
+SELECT name, first_name, user_nale FROM account WHERE name = :name;
+
+SELECT name, first_name, user_name FROM account WHERE name = 'Lacroix';
+
+
 /* ==================================== LES FILTRES =================================*/
 /* ---------- trier les posts par date décroissante (du plus récent...) ---------- */
 /* REQUETE 4*/
@@ -41,10 +48,6 @@ ORDER BY a.name ASC;
 
 
 
-/* ---------- affichage des données de la page profil d'un nom utilisateur ------------*/
-SELECT name, first_name, user_nale FROM account WHERE name = :name;
-
-SELECT name, first_name, user_name FROM account WHERE name = 'Lacroix';
 
 
 
