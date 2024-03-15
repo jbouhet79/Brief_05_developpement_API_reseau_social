@@ -68,8 +68,11 @@ Relation : LIKE, 0N POST, 0N ACCOUNT ---> many-to-many
 - jeu_de_données.sql  : insertion de données nécessaires au test des fonctionnalités et des tests
 - requetes.sql : requêtes lièes au cahier des charges.
 
-Inscription via un compte Google, discord ...
+Requête 0 : Inscription via un compte Google, discord ...
 ![requete0](Capture_code/requete0.png)
+
+Requête 00 : affichage des données de la page profil d'un nom utilisateur
+![requete00](Capture_code/requete00.png)
 
 Requête 1 : insertion de posts 
 ![requete1](Capture_code/requete1.png)
