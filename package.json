@@ -1,0 +1,25 @@
+{
+  "name": "brief_05_reseau_social_dev_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbouhet79/Brief_05_developpement_API_reseau_social.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbouhet79/Brief_05_developpement_API_reseau_social/issues"
+  },
+  "homepage": "https://github.com/jbouhet79/Brief_05_developpement_API_reseau_social#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
