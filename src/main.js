@@ -10,19 +10,19 @@ app.use(express.static('public'))
 
 /*** Middleware ***/
 
-// Middleware for JSON body parsing
-// app.use(express.json())
-// Middleware to read FormData (accessible in `req.body`)
-app.use(express.urlencoded({extended: true}))
+// Middleware for JSON body parsing - Pour gérer les json
+app.use(express.json())
+// Middleware to read FormData (accessible in `req.body`) - Pour gérer le formulaire 'form'
+app.use(express.urlencoded({ extended: true }))
 
 /*** Routeurs ***/
 
 // Routes users
- app.use(userRoutes)
+app.use(userRoutes)
 
 /*** Initialisation ***/
 
 // Serveur express.js
 app.listen(PORT, HOST, () => {
-  console.log(`Server is running on http://${HOST}:${PORT}`)
+    console.log(`Server is running on http://${HOST}:${PORT}`)
 });

@@ -24,7 +24,7 @@ export default class User {
   static async findById(userId) {
     const client = await db.connect()
     try {
-      const queryText = 'SELECT * FROM users WHERE id = $1'
+      const queryText = 'SELECT * FROM account WHERE id = $1'
       const values = [userId]
       const result = await client.query(queryText, values)
       return User.fromDbUser(result.rows[0])
@@ -49,7 +49,7 @@ export default class User {
 
   // adapter le nom de données de la BDD à l'appli utilisateur
   static fromDbUser(db_user) {
-    const { id, name, first_name, age, user_name: username, password, email, tel } = db_user
+    const { id, name, first_name, user_name: username, password, email, tel } = db_user
     return { id, name, first_name, username, password, email, tel }
   }
 }
