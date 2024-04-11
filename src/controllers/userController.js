@@ -1,4 +1,22 @@
+// userController.js
 import User from '../models/User.js'
+import Post from '../models/Post.js'
+import { generateUserToken } from '../services/jwt.js'
+
+export async function getCurrentUser(req, res) {
+  res.json(req.user)
+}
+
+export async function getPost(req, res) {
+  const posts = await Post.findAllPosts()
+  res.json(posts)
+}
+
+export async function createPost(req, res) {
+  const content = req.body.content
+  const post = await new Post(content, new Date()).savePost()
+  res.json(post)
+}
 
 export async function getUserByIdController(req, res, next) {
   const userId = req.params.id
@@ -26,15 +44,16 @@ export async function userLogin(req, res) {
   console.log(username, password)
   const user = await User.findByUsernameAndPassword(username, password)
   if (user) {
+    const token = generateUserToken(user)
     // res.send('Connexion réussie !')
-    res.json({
-      id: user.id,
-      name: user.name,
-      first_name: user.first_name,
-      username: user.username,
-      email: user.email,
-      tel: user.tel
-    })
+    res.json({ token })
+    // id: user.id,
+    // name: user.name,
+    // first_name: user.first_name,
+    // username: user.username,
+    // email: user.email,
+    // tel: user.tel
+    // })
   } else {
     res.status(401).send('Échec de la connexion. Veuillez vérifier vos identifiants.')
   }

@@ -10,7 +10,7 @@ export default class User {
   async save() {
     const client = await db.connect()
     try {
-      const queryText = 'INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *';
+      const queryText = 'INSERT INTO account (user_name, email, password) VALUES ($1, $2, $3) RETURNING *'
       const values = [this.username, this.email, this.password]
       const result = await client.query(queryText, values)
       return User.fromDbUser(result.rows[0])

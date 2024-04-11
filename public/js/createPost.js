@@ -1,8 +1,6 @@
 window.addEventListener('DOMContentLoaded', async () => {
-    // écoute le formulaire
     const form = document.querySelector('form')
-    // après le clic 
-    form.addEventListener('submit', async (event) => {
+    form.addEventListener('poster', async (event) => {
         // j'interdis le navigateur de faire son action par défaut
         event.preventDefault()
         // récupère les données du formulaire
